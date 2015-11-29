@@ -8,7 +8,7 @@ class Contribart
 
   def initialize
     @client = Octokit::Client.new(:access_token => GH_TOKEN )
-    @issues = Octokit.list_issues 'jshawl/contribart'
+    @issues = Octokit.list_issues 'nolds9/contribart'
     @today = Date.today.to_s
     create_issues( 1 )
   end
@@ -16,7 +16,7 @@ class Contribart
   def create_issues count
     1.upto(count) do | c |
       title = @today + " - " +c.to_s
-      @client.create_issue("jshawl/contribart", title, '')
+      @client.create_issue("nolds9/contribart", title, '')
     end
   end
 
